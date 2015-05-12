@@ -1,0 +1,3 @@
+[submodule "themes/papermod_2"]
+	path = themes/papermod_2
+	url = https://github.com/dawnandrew100/zola-theme-papermod-2
