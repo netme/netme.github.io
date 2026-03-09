@@ -1,0 +1,27 @@
+{% extends 'index.html' %}
+{% block main %}
+<header class="page-header">
+    <div class="breadcrumbs">
+        <a href="{{ config.base_url }}">Home</a>
+    </div>
+    <h1>{{ section.title }}</h1>
+</header>
+{% if paginator.pages %}
+{% for page in paginator.pages %}
+<article class="post-entry">
+  <header class="entry-header">
+      <h2>{{ page.title }}</h2>
+  </header>
+  {% if page.summary %}
+  <div class="entry-content">
+      <p>{{ page.summary | safe }}</p>
+  </div>
+  {% endif %}
+  <footer class="entry-footer">
+      {% include "partials/post_meta.html" %}
+  </footer>
+  <a class="entry-link" aria-label="post link to {{ page.title }}" href="{{ page.permalink }}"></a>
+</article>
+{% endfor %}
+{% endif %}
+{% endblock %}
